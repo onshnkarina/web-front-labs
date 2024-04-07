@@ -23,19 +23,21 @@ header {
     margin: 0px;
 }
 a {
-    color: rgb(61, 39, 102);
+    color: rgb(102, 39, 100);
     text-decoration: none;
+    transition: 1s 2s;
 }
 a:link {
     color: rgb(158, 142, 227);
 }
 a:visited {
-    color: rgb(35, 12, 101)
+    color: rgb(35, 12, 101);
 }
 a:hover {
     color:rgb(255, 0, 0);
     text-decoration: underline;
-    text-shadow: rgb(77, 20, 23)
+    text-shadow: rgb(77, 20, 23);
+    transition: 0.3s
 }
 a:active {
     color:black;
