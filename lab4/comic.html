@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .comic-container {
+            position: relative;
+            display: inline-block;
+        }
+        .cloud.a {
+            left: 500px;
+            top: 200px;
+            width: 70px;
+            height: 30px;
+        }
+        .cloud.b {
+            left: 410px;
+            top: 170px;
+            width: 80px;
+            height: 40px;
+        }
+        .cloud.c {
+            left: 300px;
+            top: 140px;
+            width: 100px;
+            height: 50px;
+        }
+        .cloud{
+            position: absolute;
+            background-color: lightpink;
+            color: blueviolet;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgb(9, 8, 8);
+            opacity: 0;
+
+        } 
+        .cloud.d {
+            left: 140px;
+            top: 80px;
+            width: 70px;
+            height: 60px;
+            padding: 30px;
+            text-align: center;
+            line-height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comic-container:hover .cloud{
+            opacity: 1;
+        }
+        .comic-image {
+            width: 800px;
+            height: 650px;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header> 
+
+    <main>
+        <div class="comic-container">
+            <img src="comics.jpg" class="comic-image">
+            <div class="cloud a"></div>
+            <div class="cloud b"></div>
+            <div class="cloud c"></div>
+            <div class="cloud d">Wooooowww!</div>
+        </div>
+    </main>
+    
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
