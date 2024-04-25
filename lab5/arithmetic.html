@@ -14,9 +14,22 @@
             let b =7891;
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
-        }        
+        }
+        function showAuthor() {
+            let author = 'Автор страницы:\nОнищенко Арина Сергеевна';
+            alert(author);
+        }   
+        function Hi(){
+            alert('Приветствую вас на моей странице!\nЖелаю вам хорошего дня!')
+        }     
     </script>
     <style>
+        header{
+            cursor: pointer;
+        }
+        footer{
+            cursor: pointer;
+        }
         .message {
             width: 300px;
             height: 50px;
@@ -28,16 +41,16 @@
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 4
     </header> 
 
     <main>     
        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-       <div class="message">Узнать, кто автор страницы</div>  
+       <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>  
     </main>
 
-    <footer>
+    <footer ondblclick="Hi()">
         &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
     </footer>
 </body>
