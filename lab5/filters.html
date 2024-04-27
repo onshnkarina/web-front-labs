@@ -9,10 +9,12 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
     <script>
-        function blurChange() {
-            let value = document.getElementById('blurValue').value + 'px';
-            document.getElementById('blurOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'blur(' + value +')';
+        function Change() {
+            let blurValue = document.getElementById('blurValue').value + 'px';
+
+
+            document.getElementById('blurOutput').innerText = blurValue;
+            document.getElementById('Image').style.filter = 'blur(' + blurValue +')';
         }
     </script>
 </head>
@@ -24,10 +26,10 @@
     <main>
         <div>
             Фильтр blur:
-            <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+            <input type="range" min="0" max="20" value="0" onchange="Change()" id="blurValue">
             <span id="blurOutput"></span>
         </div>
-        <div><img src="fltr.jpg" id="blurImage"></div>
+        <div><img src="fltr.jpg" id="Image"></div>
     </main>
 
     <footer>
