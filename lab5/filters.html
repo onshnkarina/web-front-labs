@@ -14,21 +14,23 @@
             let brightnessValue = document.getElementById('brightnessValue').value + '%';
             let contrastValue = document.getElementById('contrastValue').value + '%';
             let grayscaleValue = document.getElementById('grayscaleValue').value + '%';
+            let huerotateValue = document.getElementById('huerotateValue').value + 'deg';
 
 
             document.getElementById('blurOutput').innerText = blurValue;
             document.getElementById('brightnessOutput').innerText = brightnessValue;
             document.getElementById('contrastOutput').innerText = contrastValue;
             document.getElementById('grayscaleOutput').innerText = grayscaleValue;
+            document.getElementById('huerotateOutput').innerText = huerotateValue;
 
             document.getElementById('Image').style.filter = 'blur(' + blurValue +') brightness(' + brightnessValue + 
-            ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ')';
+            ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue + ')';
         }
     </script>
 </head>
 <body>
     <header>
-        НГТУ, ФБ, Лабораторная 4
+        НГТУ, ФБ, Лабораторная 5
     </header>
 
     <main>
@@ -45,6 +47,9 @@
             Фильтр grayscale:
             <input type="range" min="0" max="100" value="0" onchange="Change()" id="grayscaleValue">
             <span id="grayscaleOutput"></span><br>
+            Фильтр hue-rotate:
+            <input type="range" min="0" max="360" value="0" onchange="Change()" id="huerotateValue">
+            <span id="huerotateOutput"></span><br>
         </div>
         <div><img src="fltr.jpg" id="Image"></div>
     </main>
