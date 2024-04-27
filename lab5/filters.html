@@ -12,12 +12,15 @@
         function Change() {
             let blurValue = document.getElementById('blurValue').value + 'px';
             let brightnessValue = document.getElementById('brightnessValue').value + '%';
+            let contrastValue = document.getElementById('contrastValue').value + '%';
 
 
             document.getElementById('blurOutput').innerText = blurValue;
             document.getElementById('brightnessOutput').innerText = brightnessValue;
+            document.getElementById('contrastOutput').innerText = contrastValue;
 
-            document.getElementById('Image').style.filter = 'blur(' + blurValue +') brightness(' + brightnessValue + ')';
+            document.getElementById('Image').style.filter = 'blur(' + blurValue +') brightness(' + brightnessValue + 
+            ') contrast(' + contrastValue + ')';
         }
     </script>
 </head>
@@ -34,6 +37,9 @@
             Фильтр brightness:
             <input type="range" min="0" max="500" value="100" onchange="Change()" id="brightnessValue">
             <span id="brightnessOutput"></span><br>
+            Фильтр contrast:
+            <input type="range" min="0" max="500" value="100" onchange="Change()" id="contrastValue">
+            <span id="contrastOutput"></span><br>
         </div>
         <div><img src="fltr.jpg" id="Image"></div>
     </main>
