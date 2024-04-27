@@ -8,57 +8,56 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function Clean(){
+            let apple = document.getElementById('apples');
+            apple.value = '';
+            let pear = document.getElementById('pears');
+            pear.value = '';
+            let orange = document.getElementById('oranges');
+            orange.value = '';
+            let melon = document.getElementById('melons');
+            melon.value = '';
+            let banana = document.getElementById('banana');
+            banana.value = '';
+            document.getElementById('output').innerHTML= '';
+        }
+        function Summa(){
+            let apple = document.getElementById('apples');
+            let pear = document.getElementById('pears');
+            let orange = document.getElementById('oranges');
+            let melon = document.getElementById('melons');
+            let banana = document.getElementById('banana');
+    
+            let a = parseInt(apples.value);
+            let b = parseInt(pears.value);
+            let c = parseInt(oranges.value);
+            let d = parseInt(melons.value);
+            let e = parseInt(banana.value);
+            let summa = a*100 + b*80 + c*150 + d*300 + e*50;
+            let output = document.getElementById('output');
+            output.innerHTML = 'Общая цена: ' + summa + 'р';
+        }
+    </script>
+    <style>
+        .cart{
+            margin: 0 auto;
+            border: 2px solid rgb(117, 15, 110);
+            width: 300px;
+            height: 500px;
+        }
+        h3{
+            text-align: center;
+    
+        }
+        p{
+            margin-left: 20px;
+        }
+        input {
+            margin-left: 20px;
+        }
+    </style>
 </head>
-<script>
-    function Clean(){
-        let apple = document.getElementById('apples');
-        apple.value = '';
-        let pear = document.getElementById('pears');
-        pear.value = '';
-        let orange = document.getElementById('oranges');
-        orange.value = '';
-        let melon = document.getElementById('melons');
-        melon.value = '';
-        let banana = document.getElementById('banana');
-        banana.value = '';
-        document.getElementById('output').innerHTML= '';
-    }
-    function Summa(){
-        let apple = document.getElementById('apples');
-        let pear = document.getElementById('pears');
-        let orange = document.getElementById('oranges');
-        let melon = document.getElementById('melons');
-        let banana = document.getElementById('banana');
-
-        let a = parseInt(apples.value);
-        let b = parseInt(pears.value);
-        let c = parseInt(oranges.value);
-        let d = parseInt(melons.value);
-        let e = parseInt(banana.value);
-        let summa = a*100 + b*80 + c*150 + d*300 + e*50;
-        let output = document.getElementById('output');
-        output.innerHTML = 'Общая цена: ' + summa + 'р';
-    }
-</script>
-<style>
-    .cart{
-        margin: 0 auto;
-        border: 2px solid rgb(117, 15, 110);
-        width: 300px;
-        height: 500px;
-    }
-    h3{
-        text-align: center;
-
-    }
-    p{
-        margin-left: 20px;
-    }
-    input {
-        margin-left: 20px;
-    }
-</style>
-
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 5

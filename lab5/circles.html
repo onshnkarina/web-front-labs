@@ -8,125 +8,126 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
-</head>
-<script>
-    function show() {
-            let circles = document.querySelectorAll('.circles');
-            circles.forEach(circle => {
+    <script>
+        function show() {
+                let circles = document.querySelectorAll('.circles');
+                circles.forEach(circle => {
+                    circle.style.transition = "all 0.7s";
+                    circle.style.opacity = "1";
+                    circle.style.width = "50px";
+                    circle.style.height = "50px";
+            });
+        }
+        function hide(circle) {
                 circle.style.transition = "all 0.7s";
-                circle.style.opacity = "1";
-                circle.style.width = "50px";
-                circle.style.height = "50px";
-        });
-    }
-    function hide(circle) {
-            circle.style.transition = "all 0.7s";
-            circle.style.opacity = "0";
-            circle.style.width = "0";
-            circle.style.height = "0";
-    }
+                circle.style.opacity = "0";
+                circle.style.width = "0";
+                circle.style.height = "0";
+        }
+        
+    </script>
+    <style>
+        .container {
+            position: absolute;
+        }
+        .circles {
+            background-color: #fff;
+            border: 1px solid rgb(85, 3, 40);
+            box-shadow: 0 2px 4px rgba(34, 109, 155, 0.7);
+            transition: opacity 0.7s ease;
+            cursor: pointer;
+            position: absolute;
+            display: none;
+            padding: 10px;
+            border-radius: 60%;
+        }
+        .circles:nth-child(1) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(147, 70, 137);
+        }
     
-</script>
-<style>
-    .container {
-        position: absolute;
-    }
-    .circles {
-        background-color: #fff;
-        border: 1px solid rgb(85, 3, 40);
-        box-shadow: 0 2px 4px rgba(34, 109, 155, 0.7);
-        transition: opacity 0.7s ease;
-        cursor: pointer;
-        position: absolute;
-        display: none;
-        padding: 10px;
-        border-radius: 60%;
-    }
-    .circles:nth-child(1) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(147, 70, 137);
-    }
+        .circles:nth-child(2) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(201, 209, 127);
+        }
+    
+        .circles:nth-child(3) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(170, 236, 243);
+        }
+    
+        .circles:nth-child(4) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(240, 189, 100);
+        }
+    
+        .circles:nth-child(5) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(250, 194, 242);
+        }
+        .circles:nth-child(6) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: yellow;
+        }
+        .circles:nth-child(7) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(214, 55, 82);
+        }
+        .circles:nth-child(8) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(123, 140, 215);
+        }
+        .circles:nth-child(9) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgb(207, 118, 171);
+        }
+        .circles:nth-child(10) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: bisque;
+        }
+        .text {
+            text-align: center;
+            display: none;
+            width: auto;
+            height: auto;
+            max-width: 200px;
+            padding: 35px;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 50px;
+    
+        }
+        .vernut {
+            position: absolute;
+        }
+        .text-button {
+            margin-top: 800px;
+    
+        }
+    
+    </style>
+</head>
 
-    .circles:nth-child(2) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(201, 209, 127);
-    }
-
-    .circles:nth-child(3) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(170, 236, 243);
-    }
-
-    .circles:nth-child(4) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(240, 189, 100);
-    }
-
-    .circles:nth-child(5) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(250, 194, 242);
-    }
-    .circles:nth-child(6) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: yellow;
-    }
-    .circles:nth-child(7) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(214, 55, 82);
-    }
-    .circles:nth-child(8) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(123, 140, 215);
-    }
-    .circles:nth-child(9) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: rgb(207, 118, 171);
-    }
-    .circles:nth-child(10) {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-color: bisque;
-    }
-    .text {
-        text-align: center;
-        display: none;
-        width: auto;
-        height: auto;
-        max-width: 200px;
-        padding: 35px;
-        text-align: center;
-        line-height: 1.5;
-        font-size: 50px;
-
-    }
-    .vernut {
-        position: absolute;
-    }
-    .text-button {
-        margin-top: 800px;
-
-    }
-
-</style>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная 4
