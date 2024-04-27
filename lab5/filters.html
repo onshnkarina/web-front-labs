@@ -15,6 +15,7 @@
             let contrastValue = document.getElementById('contrastValue').value + '%';
             let grayscaleValue = document.getElementById('grayscaleValue').value + '%';
             let huerotateValue = document.getElementById('huerotateValue').value + 'deg';
+            let invertValue = document.getElementById('invertValue').value + '%';
 
 
             document.getElementById('blurOutput').innerText = blurValue;
@@ -22,9 +23,11 @@
             document.getElementById('contrastOutput').innerText = contrastValue;
             document.getElementById('grayscaleOutput').innerText = grayscaleValue;
             document.getElementById('huerotateOutput').innerText = huerotateValue;
+            document.getElementById('invertOutput').innerText = invertValue;
 
             document.getElementById('Image').style.filter = 'blur(' + blurValue +') brightness(' + brightnessValue + 
-            ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue + ')';
+            ') contrast(' + contrastValue + ') grayscale(' + grayscaleValue + ') hue-rotate(' + huerotateValue +
+             ')invert(' + invertValue + ')';
         }
     </script>
 </head>
@@ -50,6 +53,9 @@
             Фильтр hue-rotate:
             <input type="range" min="0" max="360" value="0" onchange="Change()" id="huerotateValue">
             <span id="huerotateOutput"></span><br>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="Change()" id="invertValue">
+            <span id="invertOutput"></span><br>
         </div>
         <div><img src="fltr.jpg" id="Image"></div>
     </main>
