@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<style>
+    #output {
+        border: 2px solid;
+        box-shadow: 10px 10px 5px #0002;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #b6dfe8;
+        width: 550px;
+        height: auto;
+    }
+    .h1 {
+        font-size: 30px;
+        color: rgb(72, 43, 92);
+        text-align: center;
+        margin-bottom: 20px;
+        
+    }
+    .product {
+        border-collapse: collapse;
+        width: 95%;
+        margin-bottom: 30px;
+    }
+    .product th, .product td {
+        border: 2px solid rgb(72, 43, 92);
+        padding: 8px;
+        text-align: center;
+    }
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .button {
+        cursor: pointer;
+        background-color: #8a41b4;
+        padding: 10px 18px;
+        font-size: 20px;
+        color: white;
+        border-radius: 7px;
+        border: none; 
+    }
+    .button:hover {
+        background-color: #260b46;
+    }
+</style>
+<script>
+    function summeTotal() {
+        let balance = parseFloat(document.getElementById('balance').value) || 0;
+        let Watermelon = parseInt(document.getElementById('Watermelon').value) || 0;
+        let Mango = parseInt(document.getElementById('Mango').value) || 0;
+        let Avocado = parseInt(document.getElementById('Avocado').value) || 0;
+        let Smoothies = parseInt(document.getElementById('Smoothies').value) || 0;
+        let Pinaple = parseInt(document.getElementById('Pinaple').value) || 0;
+        let Pistachios = parseInt(document.getElementById('Pistachios').value) || 0;
+        let Banana = parseInt(document.getElementById('Banana').value) || 0;
+
+        if (Watermelon < 0 || Mango < 0 || Avocado < 0 || Smoothies < 0 || Pinaple < 0 || Pistachios < 0 || Banana < 0) {
+            alert('Количество товара не может быть отрицательным! Введите корректное значение');
+            return;
+        }
+
+        let total = (Watermelon * 100 + Mango * 500 + Avocado * 120 + Smoothies * 150 + Pinaple * 170 + Pistachios * 1500 + Banana * 120);
+        if (total === 0) {
+            alert('Необходимо выбрать хотя бы один товар!');
+            return;
+        }
+
+        let remainingBalance = balance - total;
+        if (remainingBalance < 0) {
+            alert('У вас недостаточно средств на балансе!');
+            return;
+        }
+
+        document.getElementById('result').innerHTML = 'Общая сумма: ' + total + ' руб.<br>Остаток на балансе: ' + remainingBalance + ' руб.';
+    }
+
+    function ochistitValues() {
+        document.getElementById('balance').value = '';
+        document.getElementById('Watermelon').value = '';
+        document.getElementById('Mango').value = '';
+        document.getElementById('Avocado').value = '';
+        document.getElementById('Smoothies').value = '';
+        document.getElementById('Pinaple').value = '';
+        document.getElementById('Pistachios').innerHTML = '';
+        document.getElementById('Banana').innerHTML = '';
+        document.getElementById('result').innerHTML = '';
+    }
+</script>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header> 
+
+    <main> 
+        <div id="output">
+            <div class="h1">
+                Корзина товаров
+            </div>
+            <input type="number" id="balance" placeholder="Введите баланс" style="width: 100%; margin-bottom: 10px;">
+            <table class="product">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Название</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Арбуз</td>
+                        <td>100 руб/кг</td>
+                        <td><input type="number" min="0" id="Watermelon" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Манго</td>
+                        <td>500 руб/кг</td>
+                        <td><input type="number" min="0" id="Mango" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Авокадо</td>
+                        <td>120 руб/шт</td>
+                        <td><input type="number" min="0" id="Avocado" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Смузи</td>
+                        <td>150 руб/бут</td>
+                        <td><input type="number" min="0" id="Smoothies" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Ананас</td>
+                        <td>170 руб/кг</td>
+                        <td><input type="number" min="0" id="Pinaple" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Фисташки</td>
+                        <td>1500 руб/кг</td>
+                        <td><input type="number" min="0" id="Pistachios" placeholder="0"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Бананы</td>
+                        <td>120 руб/кг</td>
+                        <td><input type="number" min="0" id="Banana" placeholder="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons">
+                <button class="button" onclick="summeTotal()">ОК</button>
+                <button class="button" onclick="ochistitValues()">Очистить значения</button>
+            </div>
+            <div id="result" style="text-align: center; margin-top: 10px;"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
