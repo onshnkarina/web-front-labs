@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<script>
+    function filter() {
+        let color = document.getElementById('wear-color').value
+        let type = document.getElementById('wear-type').value
+        let wear = document.getElementById('wear');
+        wear.src = ''
+
+        if (color == 'Черный' && type == 'Футболка') {
+            wear.src = 'black_tsh.jpg'
+        }
+        else if (color == 'Розовый' && type == 'Футболка') {
+            wear.src = 'pink_tsh.jpg'
+        }
+        else if (color == 'Белый' && type == 'Футболка') {
+            wear.src = 'white_tsh.jpg'
+        }
+        else if (color == 'Черный' && type == 'Свитшот') {
+            wear.src = 'black_sw.jpeg'
+        }
+        else if (color == 'Розовый' && type == 'Свитшот') {
+            wear.src = 'pink_sw.jpg'
+        }
+        else if (color == 'Белый' && type == 'Свитшот') {
+            wear.src = 'white_sw.jpg'
+        }
+        else if (color == 'Черный' && type == 'Худи') {
+            wear.src = 'black_h.webp'
+        }
+        else if (color == 'Розовый' && type == 'Худи') {
+            wear.src = 'pink_h.jpg'
+        }
+        else if (color == 'Белый' && type == 'Худи') {
+            wear.src = 'white_h.webp'
+        }
+    }
+</script>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header> 
+
+    <main> 
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Черный</option>
+                <option>Розовый</option>
+                <option>Белый</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Свитшот</option>
+                <option>Худи</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br><br>
+
+            <img id="wear">
+        </div>   
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
