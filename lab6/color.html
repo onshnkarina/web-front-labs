@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<style>
+    div {
+        width: 350px;
+        height: 100px;
+        line-height: 30px;
+        font-size: 18px;
+        text-align: center;
+        background-color: purple;
+        border: 1px solid yellow;
+        color: yellow;
+        margin: 25px;
+        padding-top: 10px;
+        position: static;
+        box-shadow: 10px 10px 5px #0002;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    }
+
+</style>
+<script>
+    function changeColor(div){
+        if(div.style.background == 'purple') {
+            div.style.background = 'red'
+            div.style.color = 'green'
+            document.getElementById('color-name').innerHTML = 'красный'
+        }
+        else if(div.style.background == 'red') {
+            div.style.background = 'lightpink'
+            div.style.color = 'purple'
+            document.getElementById('color-name').innerHTML = 'светло-розовый'
+        }
+        else if(div.style.background == 'lightpink') {
+            div.style.background = 'blue'
+            div.style.color = 'white'
+            document.getElementById('color-name').innerHTML = 'голубой'
+        }
+        else if(div.style.background == 'blue') {
+            div.style.background = 'yellow'
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'желтый'
+        }
+        else {
+            div.style.background = 'purple'
+            div.style.color = 'yellow'
+            document.getElementById('color-name').innerHTML = 'фиолетовый'
+        }
+    }
+</script>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header> 
+
+    <main> 
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">фиолетовый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
