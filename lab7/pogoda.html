@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        p{
+            margin: 10px auto;
+            border: 2px dotted rgb(94, 0, 128);
+            background-color: rgba(203, 255, 252, 0.676);
+            padding: 10px;
+            width: 700px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .button {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+            color: purple;
+            border-radius: 10px;
+            border: 2px solid blueviolet;
+            box-shadow:0 3px 4px rgba(97, 3, 140, 0.7);
+            padding: 10px 25px;
+        }
+        .button:hover {
+            background-color: plum;
+        }
+    </style>
+    <script>
+        function pogoda(){
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+
+            fetch(url)
+            .then( function(response){
+                return response.json();
+            })
+            .then( function(json){
+                console.log(json);
+                document.querySelector('.w_8am').innerHTML = 'Сегодня температура воздуха в 8:00 составляет: ' + json.hourly.temperature_2m[8] + ' градусов';
+                document.querySelector('.w_12pm').innerHTML = 'Сегодня температура воздуха в 12:00 составляет: ' + json.hourly.temperature_2m[12] + ' градусов';
+                document.querySelector('.w_20pm').innerHTML = 'Сегодня температура воздуха в 20:00 составляет: ' + json.hourly.temperature_2m[20] + ' градусов';
+            })
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+
+    <main> 
+        <h1 style="text-align: center;color: purple;">Прогноз погоды в Новосибирске</h1>
+        <button class="button" onclick="pogoda()">Узнать погоду</button>
+        <div>
+            <p class="w_8am"></p>
+            <p class="w_12pm"></p>
+            <p class="w_20pm"></p>
+        </div>   
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
