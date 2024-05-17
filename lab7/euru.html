@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .button {
+        background-color: #a5dde8;
+        color: rgb(118, 0, 116);
+        padding: 15px 25px;
+        box-shadow: 0 3px 4px rgba(97, 3, 140, 0.7);
+        font-size: 20px;
+        cursor: pointer;
+        border: 2px solid rgb(64, 0, 109);
+        border-radius: 8px;
+    }
+    .button:hover {
+        background-color: #9c5bae;
+    }
+    .info {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 20px;
+        margin-left: 1px;
+        margin-top: 15px;
+        }
+        th {
+            background-color: rgb(155, 86, 130);
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 40%;
+            box-shadow: 0 3px 4px rgba(97, 3, 140, 0.7);
+        }
+        th, td {
+            border: 2px solid white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const currentDate = new Date(json.Date).toLocaleDateString('ru-RU');
+                    const currentRate = json.Valute.EUR.Value.toFixed(2);
+                    const previousRate = json.Valute.EUR.Previous.toFixed(2);
+                    const rateraznica = (currentRate - previousRate).toFixed(2);
+                    const rateinf = (rateraznica > 0) ? 'Курс поднялся' : ((rateraznica < 0) ? 'Курс опустился' : '');
+                    
+                    document.getElementById('currentDate').innerText = `Дата запроса: ${currentDate}`;
+                    document.getElementById('currentRate').innerText = `${currentRate} р.`;
+                    document.getElementById('previousRate').innerText = `${previousRate} р.`;
+                    document.getElementById('rateraznica').innerText = `${Math.abs(rateraznica)} р.`;
+                    document.getElementById('rateinf').innerText = rateinf;
+
+                    document.getElementById('Info').style.display = 'block';
+                })
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header> 
+
+    <main> 
+        <button class="button" onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="Info" class="info" style="display: none;">
+            <table>
+                <tr>
+                    <th> </th>
+                    <th>Значение</th>
+                </tr>
+                <tr>
+                    <td>Текущий курс евро</td>
+                    <td id="currentRate"></td>
+                </tr>
+                <tr>
+                    <td>Курс за прошлую дату</td>
+                    <td id="previousRate"></td>
+                </tr>
+                <tr>
+                    <td>Разница</td>
+                    <td id="rateraznica"></td>
+                </tr>
+            </table>
+            <p id="currentDate"></p>
+            <p id="rateinf"></p>
+            <p>Ссылка на ресурс: <a href="https://www.cbr-xml-daily.ru/">www.cbr-xml-daily.ru</a></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
