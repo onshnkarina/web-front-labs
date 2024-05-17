@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        button{
+            margin-bottom: 30px;
+        }
+        table {
+            background-color: rgb(255, 255, 218);
+            border: 3px solid rgb(72, 43, 92);
+        }
+        p {
+            text-shadow: 0 2px 4px rgba(197, 197, 27, 0.7);
+        }
+    </style>
+    <script>
+        function curs(){
+            const data = [
+            '03.05.2024', '06.05.2024', '07.05.2024', '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024', '15.05.2024', '16.05.2024', '17.05.2024'
+            ];
+            const price = [
+            0.6396, 0.6510, 0.6406, 0.6208, 0.6336, 0.6390, 0.6234, 0.6226, 0.5998, 0.6022
+            ];
+            let table = document.getElementById('akzii');
+            for (let i=0; i<price.length; i++){
+                let tr = document.createElement('tr');
+
+                let td1 = document.createElement('td');
+                td1.innerHTML = price[i];
+
+                let td2 = document.createElement('td');
+                td2.innerHTML = data[i];
+
+                let td3 = document.createElement('td');
+                if (i > 0){
+                    let raznica = price[i] - price[i-1];
+                    raznica = raznica.toFixed(4)
+                    td3.innerHTML = raznica;
+                }
+                else{
+                    td3.innerHTML = ' разницы нет ';
+                    td3.style.textAlign = 'center';
+                }
+                
+                tr.appendChild(td2);
+                tr.appendChild(td1);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i =0; i<price.length; i++){
+                sum+=price[i];
+            }
+
+            let srednee = sum/price.length
+            srednee = srednee.toFixed(4);
+            const min = Math.min.apply(Math, price)
+            const max = Math.max.apply(Math, price)
+
+            document.querySelector('.srednee').innerHTML = 'Среднее значение: ' + srednee;
+            document.querySelector('.min').innerHTML = 'Минимальное значение стоимости акции: ' + min;
+            document.querySelector('.max').innerHTML = 'Максимальное значение стоимости акции: ' + max;
+        }
+    </script>
+</head>
+<body>
+    <header>НГТУ, ФБ, Лабораторная работа 7</header>
+
+    <main>
+        <button onclick="curs()" class="but">Курс акций компании Россети Центр</button>
+        <table border="1" id="akzii"></table>
+        <p class="srednee"></p>
+        <p class="min"></p>
+        <p class="max"></p>
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
