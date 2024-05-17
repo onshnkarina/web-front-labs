@@ -77,8 +77,33 @@
                 main.appendChild(newBlock);
             }  
         }
+        function greenlightorange(){
+            let main = document.querySelector('main');
+            let col = document.querySelector('.col');
+            for (let i = col.value; i>0; i--){
+                let newBlock = document.createElement('div');
+                newBlock.style.height = '20px';
+                newBlock.style.width = '20px';
+                newBlock.style.color = 'white';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.border = '2px solid white';
+                newBlock.style.display = 'inline-block';
+                newBlock.innerHTML = `${i}`;
+                if (i % 2 == 0){
+                    newBlock.style.backgroundColor = 'orange';
+                }
+                else{
+                    newBlock.style.backgroundColor = 'lightgreen';
+                }
+                main.appendChild(newBlock);
+            }  
+        }
     </script>
     <style>
+        input{
+            width: 220px;
+        }
         div {
             border: 2px solid rgb(72, 43, 92);
             margin: 20px;
@@ -94,11 +119,13 @@
 
     <main>
         <input type="number" placeholder="Введите количество блоков" min="0" class="count">
+        <input type="number" placeholder="Введите количество кругов" min="0" class="col"><br><br>
         <button onclick="addNewBlock()">Добавить блок</button> 
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add10_80()"> 10 => -80</button>
         <button onclick="opacity()">Добавить полупрозрачные блоки</button>
+        <button onclick="greenlightorange()">Цветные круги</button><br>
     </main>
 
     <footer>
