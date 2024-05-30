@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онищенко Арина Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        .birth {
+            border: 2px solid;
+            border-radius: 10px;
+            width: 400px;
+            height: 90px;
+            background-color: #8ee4af;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .button {
+            padding: 3px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header> 
+
+    <main>
+        <div id="birth">
+            <div>
+                <label> Дата рождения: <input type="date"></label>
+            </div><br>
+            <div>
+                <button class="button" onclick="ShowDaysCount()">Показать число дней</button> <br>
+                <button class="button" onclick="clearT()">Очистить поле ввода</button>
+            </div>
+            <div id="days-count"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Онищенко Арина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
