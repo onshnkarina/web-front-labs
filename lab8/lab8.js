@@ -32,3 +32,14 @@ function DayOfWeekName(dayIndex) {
     const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     return daysOfWeek[dayIndex];
 }
+function DayOfWeek() {
+    const vvodDate = document.getElementById('vvod-date').value;
+    const vvodMonth = document.getElementById('vvod-month').value - 1; 
+    const vvodYear = document.getElementById('vvod-year').value;
+
+    const inputDate = new Date(vvodYear, vvodMonth, vvodDate);
+    const dayweek = DayOfWeekName(inputDate.getDay());
+
+    const outputDiv = document.getElementById('vivod-day-of-week');
+    outputDiv.textContent = `День недели для указанной даты: ${dayweek}`;
+}
