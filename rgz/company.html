@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - ООО "Земский банк"</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="f.ico" type="image/x-icon">
+    <link rel="icon" href="f-16x16.png">
+    <link rel="icon" href="f-32x32.png">
+    <style>
+        body {
+            background-image: url('fon.jpg');
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.jpg" alt="Земский банк" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="kursvalut.html">Курс валют</a></li>
+                    <li><a href="contacts.html">Контактные данные</a></li>
+                    <li><a href="video.html">Видео</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="content">
+                <h1 style="font-size: 28px;">ООО "Земский банк"</h1>
+                <p style="color: rgb(146, 143, 157);">ООО «Земский банк» предлагает своим клиентам все типы банковского 
+                    сервиса, включающие в себя комплексное обслуживание частных и корпоративных 
+                    клиентов, с предоставлением им максимально комфортных и безопасных условий сотрудничества.                                                                                                                                    </p>
+            </div>
+        </section>
+        <section class="activity-section">
+            <h2 style="font-size: 30px; color: rgb(40,30,90); text-align: center;">Направления деятельности</h2>
+            <div class="activities">
+                <div class="activity" onclick="openModal('activity1')" style="background-image: url('ok1.png');background-size: cover;
+                background-position: center;">
+                    <h3>Кредитование</h3>
+                </div>
+                <div class="activity" onclick="openModal('activity2')" style="background-image: url('r.png');">
+                    <h3>Депозиты</h3>
+                </div>
+                <div class="activity" onclick="openModal('activity3')" style="background-image: url('b.png');">
+                    <h3>Эквайринг</h3>
+                </div>
+                <div class="activity" onclick="openModal('activity4')" style="background-image: url('i.png');">
+                    <h3>Кассовые операции</h3>
+                </div>
+                <div class="activity" onclick="openModal('activity5')" style="background-image: url('g.png');">
+                    <h3>Денежные переводы "Золотая корона"</h3>
+                </div>
+                <div class="activity" onclick="openModal('activity6')" style="background-image: url('j.png');">
+                    <h3>Выпуск банковских карт</h3>
+                </div>
+            </div>
+        </section>
+        <section class="history-section">
+            <h2 style="font-size: 30px; color: rgb(40,30,90)">Краткая история</h2>
+            <p style="text-align: center;">Акционерный коммерческий банк "Земский банк" (ЗАО АКБ "Земский банк") зарегистрирован Центральным банком РФ 16 июня 1994 года. Головной офис банка располагался в Самаре.
+                В 1996 году общим собранием акционеров банка было принято решение о переводе банка в г. Сызрань.
+                16 августа 1996 года Главным управлением Центрального банка по Самарской области был утвержден новый юридический адрес банка: г. Сызрань, ул. Кирова, 46.
+                Дальнейшие события подтвердили: банк оказался в нужном месте в нужное время. Сделав своим приоритетом реальную экономику, устранившись от доходных, но рискованных игр на финансовом рынке, Земский банк не только благополучно пережил все экономические кризисы, но и приобрел новых клиентов, оценивших все преимущества надежности и стабильности. 
+                Усилиями коллектива профессионалов Земский банк стал сегодня финансовым учреждением, которое высоко ценят клиенты и партнеры.
+                Земский банк сегодня - универсальный региональный банк, предоставляющий полный спектр банковских услуг и активно применяющий достижения современных технологий.</p>
+            <div class="timeline">
+                <div class="timeline-event">
+                    <img src="1994.jpg" alt="1994">
+                    <p>16 июня 1994: Регистрация "Земского банка" Центральным банком РФ</p>
+                </div>
+                <div class="timeline-event">
+                    <img src="2000.jpg" alt="2000">
+                    <p>2000: Получение валютной лицензии. Банк получил возможность 
+                        осуществлять операции в иностранной валюте с юридическими и физическими лицами. </p>
+                </div>
+                <div class="timeline-event">
+                    <img src="2007.png" alt="2007">
+                    <p>2007:  Банк был включен в систему банковских электронных срочных платежей (БЭСП) в качестве прямого участника.</p>
+                </div>
+                <div class="timeline-event">
+                    <img src="2008.png" alt="2008">
+                    <p>2008: Выпуск первых кредитных карт.</p>
+                </div>
+                <div class="timeline-event">
+                    <img src="2011.jpg" alt="2011">
+                    <p>2011: Банку были открыты корреспондентские счета в Raiffeisen Bank International , Vienna, Austria в иностранной валюте (доллары, евро).</p>
+                </div>
+                <div class="timeline-event">
+                    <img src="2020.jpeg" alt="2020">
+                    <p>2020: Земский Банк стал участником Системы быстрых платежей Банка России.</p>
+                </div>
+            </div>
+        </section>
+        <section class="founders">
+            <div class="founder">
+                <img src="m.png" alt="Симонов Максим Владимирович">
+                <p><b><u>Симонов Максим Владимирович</u></b></p>
+                <p class="description">Председатель Правления</p>
+            </div>
+            <div class="founder">
+                <img src="m.png" alt="Тарасов Юрий Владимирович">
+                <p><b><u>Тарасов Юрий Владимирович</u></b></p>
+                <p class="description">Первый заместитель Председателя Правления</p>
+            </div>
+            <div class="founder">
+                <img src="m.png" alt="Балмасов Алексей Петрович">
+                <p><b><u>Балмасов Алексей Петрович</u></b></p>
+                <p class="description">Заместитель Председателя Правления -  начальник 
+                    управления розничного бизнеса, член Правления</p>
+            </div>
+            <div class="founder">
+                <img src="m.png" alt="Власова Оксана Евгеньевна">
+                <p><b><u>Власова Оксана Евгеньевна</u></b></p>
+                <p class="description">Главный бухгалтер – начальник управления учета и отчетности</p>
+            </div>
+        </section>      
+    </main>
+    <footer>
+        <p>&copy; 2024 ООО "Земский банк". Все права защищены.</p>
+    </footer>
+    <div class="modal" id="modal">
+        <button class="close-btn" onclick="closeModal()">X</button>
+        <div id="activity1" class="modal-content">
+            <h3>Кредитование</h3>
+            <ul type="square">
+                <li>Кредитование малого и среднего бизнеса, индивидуальных предпринимателей;</li>
+                <li>Кредитование физических лиц;</li>
+                <li>Ипотечное кредитование;</li>
+            </ul>
+        </div>
+        <div id="activity2" class="modal-content">
+            <h3>Депозиты</h3>
+            <p>Земский банк предлагает юридическим лицам разместить временно свободные денежные средства на депозитные 
+                вклады, которые можно открыть в рублях РФ и в иностранной валюте.</p>
+        </div>
+        <div id="activity3" class="modal-content">
+            <h3>Эквайринг</h3>
+            <p>Эквайринг — это услуга банка, позволяющая организации торговли и сервиса принимать банковские карты 
+                в качестве оплаты за реализованные товары и услуги.</p>
+            <p><u>Преимущества</u></p>
+            <ul type="square">
+                <li>Легкое подключение 1 визит в банк</li>
+                <li>Гарантия безопасных платежей</li>
+                <li>Круглосуточная сервисная поддержка</li>
+                <li>Минимальный пакет документов</li>
+                <li>Не требуется открытие нового счета</li>
+            </ul>
+        </div>
+        <div id="activity4" class="modal-content">
+            <h3>Кассовые операции</h3>
+            <ul type="square">
+                <li>Коммунальные платежи;</li>
+                <li>Оплата услуг</li>
+                <li>Оплата кредитов</li>
+                <li>Оплата товаров</li>
+            </ul>
+        </div>
+        <div id="activity5" class="modal-content">
+            <h3>Денежные переводы "Золотая корона"</h3>
+            <p>Денежные переводы «Золотая Корона» — сервис, позволяющий 
+                быстро и безопасно отправить деньги без открытия счета. Процедура 
+                оформления перевода, как правило, занимает минуты. ООО «Земский банк» 
+                также является участником платёжного сервиса «Золотая корона», каждый день 
+                оказывая услуги денежных переводов, которые доступны в большинстве стран СНГ, 
+                в странах Европы и Азии. Где бы ни находились вы или ваши близкие, у вас всегда есть 
+                возможность поддержать своих друзей и семью.</p>
+        </div>
+        <div id="activity6" class="modal-content">
+            <h3>Выпуск банковских карт</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="classic.png" alt="МИР Classic">
+                    <p><i>МИР Classic</i></p>
+                </div>
+                <div class="card">
+                    <img src="pens.png" alt="Пенсионная карта МИР">
+                    <p><i>Пенсионная карта МИР</i></p>
+                </div>
+                <div class="card">
+                    <img src="prem.png" alt="МИР Премиум">
+                    <p><i>МИР Премиум</i></p>
+                </div>
+                <div class="card">
+                    <img src="stk.jpg" alt="Стикер">
+                    <p><i>Стикер</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+</body>
+</html>

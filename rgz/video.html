@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео - ООО "Земский банк"</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="f.ico" type="image/x-icon">
+    <link rel="icon" href="f-16x16.png">
+    <link rel="icon" href="f-32x32.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-repeat: no-repeat;
+            
+        }
+        main {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        h1 {
+            color: #16144c;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.jpg" alt="Земский банк" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="kursvalut.html">Курс валют</a></li>
+                    <li><a href="contacts.html">Контактные данные</a></li>
+                    <li><a href="video.html">Видео</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 style="color: rgb(22, 1, 76); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">ООО "Земский банк"</h1>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/W8HumcyBBdI?si=S5EBhrYshxQuIkGt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ООО "Земский банк". Все права защищены.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

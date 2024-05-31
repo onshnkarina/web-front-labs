@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют - ООО "Земский банк"</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="f.ico" type="image/x-icon">
+    <link rel="icon" href="f-16x16.png">
+    <link rel="icon" href="f-32x32.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            position: relative;
+            min-height: 100vh;
+            background: rgba(44, 44, 44, 0.5);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('val.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+
+        .currency-container {
+            background: rgba(104, 96, 131, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .currency-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .currency-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .currency-container input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .currency-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(40,30,90);
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .currency-container button:hover {
+            background-color: #6a5985;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.jpg" alt="Земский банк" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="company.html">О компании</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="kursvalut.html">Курс валют</a></li>
+                    <li><a href="contacts.html">Контактные данные</a></li>
+                    <li><a href="video.html">Видео</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="currency-container">
+            <h1>Курс валют</h1>
+            <label for="rub">Сумма в рублях:</label>
+            <input type="number" id="rub" placeholder="Введите сумму в рублях">
+
+            <label for="czk">Сумма в кронах:</label>
+            <input type="number" id="czk" placeholder="Введите сумму в кронах">
+
+            <button onclick="convertToCzk()">Конвертировать в кроны</button>
+            <button onclick="convertToRub()">Конвертировать в рубли</button>
+
+            <div class="result" id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ООО "Земский банк". Все права защищены.</p>
+    </footer>
+    <script>
+        let exchangeRate;
+
+        async function fetchExchangeRate() {
+            const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+            const data = await response.json();
+            exchangeRate = data.Valute.CZK.Value;
+        }
+
+        function convertToCzk() {
+            const rubAmount = document.getElementById('rub').value;
+            const czkAmount = (rubAmount / exchangeRate).toFixed(2);
+            document.getElementById('result').innerText = `${rubAmount} рублей = ${czkAmount} крон`;
+        }
+
+        function convertToRub() {
+            const czkAmount = document.getElementById('czk').value;
+            const rubAmount = (czkAmount * exchangeRate).toFixed(2);
+            document.getElementById('result').innerText = `${czkAmount} крон = ${rubAmount} рублей`;
+        }
+
+        fetchExchangeRate();
+    </script>
+</body>
+</html>
